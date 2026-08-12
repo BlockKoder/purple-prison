@@ -12,7 +12,19 @@ definePageMeta({ layout: false });
 import rawHomeDocument from "~/assets/purpleprison-home.html?raw";
 
 const homeDocument = rawHomeDocument
-    .replaceAll('href="/purpleprison-home/"', 'href="/" target="_top"')
+    .replace("<head>", '<head><base href="/">')
+    .replaceAll('href="/purpleprison-home/"', 'href="/"')
+    .replaceAll('href="login.html"', 'href="/login"')
+    .replaceAll('href="register.html"', 'href="/register"')
+    .replaceAll('href="features.html"', 'href="/features"')
+    .replaceAll('href="vote.html"', 'href="/vote"')
+    .replaceAll('href="wiki.html"', 'href="/wiki"')
+    .replaceAll('href="staff.html"', 'href="/staff"')
+    .replaceAll('href="support.html"', 'href="/support"')
+    .replaceAll('href="contact.html"', 'href="/contact"')
+    .replaceAll('href="privacy.html"', 'href="/privacy"')
+    .replaceAll('href="terms.html"', 'href="/terms"')
+    .replaceAll('href="store.html"', 'href="/store"')
     .replaceAll("<a ", '<a target="_top" ');
 </script>
 
