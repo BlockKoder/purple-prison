@@ -368,7 +368,7 @@
                     <!-- Forums link removed -->
                     <a href="wiki.html" class="nav-link text-zinc-300 hover:text-white font-tech font-bold text-sm tracking-widest uppercase">Wiki</a>
                 </div>
-                <div class="hidden lg:flex items-center gap-3">
+                <div class="hidden lg:flex items-center gap-3 header-auth-container">
                     <a href="login.html" class="px-4 py-2 text-zinc-300 hover:text-pink-400 font-tech font-bold text-xs tracking-widest uppercase transition-colors">Login</a>
                     <a href="register.html" class="px-4 py-2 bg-gradient-to-r from-brand-purple to-brand-pink text-white border-0 rounded-xl text-xs font-tech font-bold tracking-widest uppercase shadow-lg shadow-brand-purple/20 hover:shadow-brand-purple/40 transition-all">Register</a>
                 </div>
@@ -386,7 +386,7 @@
                     <a href="vote.html" class="nav-link text-zinc-300 hover:text-white font-tech font-bold text-sm tracking-widest uppercase">Vote</a>
                     <!-- Forums link removed -->
                     <a href="wiki.html" class="nav-link text-zinc-300 hover:text-white font-tech font-bold text-sm tracking-widest uppercase">Wiki</a>
-                    <div class="pt-3 border-t border-white/10 mt-3 flex flex-col gap-2">
+                    <div class="pt-3 border-t border-white/10 mt-3 flex flex-col gap-2 header-auth-container">
                         <a href="login.html" class="px-4 py-3 text-center text-zinc-300 hover:text-pink-400 rounded-2xl text-xs font-tech font-bold uppercase tracking-widest transition-colors">Login</a>
                         <a href="register.html" class="px-4 py-3 bg-gradient-to-r from-brand-purple to-brand-pink text-white rounded-2xl text-xs font-tech font-bold uppercase tracking-widest text-center shadow-lg shadow-brand-purple/20">Register</a>
                     </div>
@@ -496,9 +496,9 @@
                         <p id="discord-desc" class="text-zinc-400 font-tech text-xs sm:text-sm">Connect with thousands of players on Discord.</p>
                     </div>
                 </div>
-                <button class="bg-transparent border-0 p-0 focus:outline-none active:scale-95 transition-transform shadow-lg shadow-discord/30 rounded-xl overflow-hidden flex-shrink-0">
+                <a href="https://discord.gg/pp" target="_blank" class="bg-transparent border-0 p-0 focus:outline-none active:scale-95 transition-transform shadow-lg shadow-discord/30 rounded-xl overflow-hidden flex-shrink-0 inline-block">
                     <img src="discord.png" alt="Join Discord" class="h-11 md:h-12 w-auto object-contain">
-                </button>
+                </a>
             </section>
         </div>
 
@@ -530,12 +530,11 @@
             </div>
             <div class="glass-panel p-6 rounded-2xl flex items-center gap-4 sm:col-span-2 md:col-span-1 border-l-2 border-brand-pink/30 animate-fade-up animate-fade-up-delay-2">
                 <div class="w-12 h-12 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink">
-                    <span class="material-symbols-outlined" data-icon="payments">payments</span>
+                    <span class="material-symbols-outlined">schedule</span>
                 </div>
                 <div class="overflow-hidden w-full">
-                    <h3 id="stat-donor-label" class="text-zinc-500 text-xs font-bold uppercase font-tech">Recent Donor</h3>
-                    <p class="text-xl font-bold text-white truncate font-minecraft w-full"><span id="stat-donor-name">Player_Zero</span> <span
-                            id="stat-donor-tag" class="text-xs text-gold ml-1">[LEGEND]</span></p>
+                    <h3 class="text-zinc-500 text-xs font-bold uppercase font-tech">ESTABLISHED</h3>
+                    <p class="text-xl font-bold text-white truncate font-minecraft w-full">2014 <span class="text-xs text-gold ml-1">[ONLINE SINCE]</span></p>
                 </div>
             </div>
         </section>
@@ -543,74 +542,85 @@
         <!-- ========================================== -->
         <!-- FEATURE CARDS                             -->
         <!-- ========================================== -->
-        <section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-stack-lg">
-            <div
-                class="md:col-span-2 relative glass-panel rounded-3xl group cursor-pointer aspect-[4/3] sm:aspect-video overflow-hidden border-brand-purple/20 animate-fade-up">
-                <img loading="lazy"
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50"
-                    data-alt="Epic cinematic render of a dense Minecraft forest with sunlight rays piercing through golden leaves and ancient ruins"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtqd6FsqeHQ8uhu02PguKF4aCm6EdTx-tO4Nu2EKHPmrRCckpQZOkPkXAk0Y4KXwDEeETuy4YKvBb_BjOD20T_FvOaJZ9iBvDGEz48WTNkHky6LC3aqjUTt6TGObmbK_GEKjmc3J8ThR1PA-ykuimMsRSKKjzMEVn8qqzBE_nDNJNcxC66mSRQh8Uw9n3Ql1vrBI-dUhtbsjWel5uHXw8ozr9pOYaqavKPF07K0PHfq_WFTOIy_SUj_-MoodsIA_iqoKdnR2ofvVk" />
-                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-6 md:p-8">
-                    <span id="feature-prison-tag"
-                        class="px-3 py-1 bg-gradient-to-r from-brand-purple to-brand-pink text-white text-[10px] font-black uppercase rounded tracking-widest mb-3 inline-block font-tech">Popular</span>
-                    <h2 id="feature-prison-title"
-                        class="text-2xl sm:text-3xl font-black text-white mb-2 font-minecraft uppercase italic tracking-tighter">
-                        Prison Ranks</h2>
-                    <p id="feature-prison-desc" class="text-xs sm:text-sm text-zinc-300 max-w-sm mb-4 font-tech">Mine your way up through Iron,
-                        Gold, and Diamond ranks. Unlock better mines, perks, and plot upgrades as you progress.</p>
-                    <button
-                        class="flex items-center gap-2 text-brand-pink font-bold text-sm uppercase group-hover:gap-4 transition-all font-tech">Explore
-                        Prisons <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
-                </div>
-            </div>
-            <div
-                class="md:col-span-2 relative glass-panel rounded-3xl group cursor-pointer aspect-[4/3] sm:aspect-video overflow-hidden border-tertiary/20 animate-fade-up animate-fade-up-delay-1">
-                <img loading="lazy"
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50"
-                    data-alt="Stunning Minecraft skyblock render with multiple floating islands connected by crystal bridges in a starry nebula sky"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwh-QKkFMD4uwLcwJOj5fO0X4FcnE-TdBvkGe2oT56v3wecCuC8ah4q0bVA8aWgxpJwYkS3sWYE5qcXvq18PLRBrwG2-z0fmlNIc_DwfujaU-qL6n1PB6DR5dbMcD8-mIV9HeJCibuIURyHnHV1_ACtSCn5MyR3MPFt1rkmFtAqNJFn6Zt0F5TDRtq07u69m58VL9KKip0TymKpjM_t67-tAuG4TkCJfQI_ug-DrheZfqEs8UDHtH55iDjxsZsBpAgk6B0oc56LvE" />
-                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-6 md:p-8">
-                    <span id="feature-plot-tag"
-                        class="px-3 py-1 bg-gradient-to-r from-brand-purple to-brand-pink text-white text-[10px] font-black uppercase rounded tracking-widest mb-3 inline-block font-tech">Exclusive</span>
-                    <h2 id="feature-plot-title"
-                        class="text-2xl sm:text-3xl font-black text-white mb-2 font-minecraft uppercase italic tracking-tighter">
-                        Plot Mines</h2>
-                    <p id="feature-plot-desc" class="text-xs sm:text-sm text-zinc-300 max-w-sm mb-4 font-tech">Upgrade your personal plot mines
-                        with Iron, Gold, Diamond, and exotic Clay blocks for the best block values on the server.</p>
-                    <button
-                        class="flex items-center gap-2 text-tertiary font-bold text-sm uppercase group-hover:gap-4 transition-all font-tech">Upgrade
-                        Mine <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
-                </div>
-            </div>
-            <div
-                class="md:col-span-4 relative glass-panel rounded-3xl group cursor-pointer min-h-[16rem] overflow-hidden border-secondary/20 animate-fade-up animate-fade-up-delay-2">
-                <img loading="lazy"
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40"
-                    data-alt="Action packed Minecraft minigames arena with colorful beacons, explosions, and high-speed motion blur effects"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuwznvhYjrhYBCmOvRc4icYkmiRxkeg8fYpY-6Dy8jNKUhVJp4Aw9atTm6SKulqzQnR_4diLtshTjj1MEefZ3QL8nn_vpdNHPWQicuBDsC8Ih3tIqYnAvUCpH4ShgMZkOcsQ29bT15TrbbZknX1nC_v-ylyaif9_Q1ArR_Q4vtrcI1vAq1G6oBE6FDk0M6dhLvp3u-rrg8J2L9BtEs3i6LrCj_fSNYKDTzEe4_acK_BlQ2QdX-qYiskSWUMuEE3TbbtO0e_OhSksA" />
-                <div
-                    class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/60 md:via-zinc-950/40 to-transparent">
-                </div>
-                <div class="absolute inset-0 flex flex-col justify-center p-6 md:p-12">
-                    <h2 id="feature-multipliers-title"
-                        class="text-3xl md:text-4xl font-black text-white mb-2 font-minecraft uppercase italic tracking-tighter">
-                        Multipliers & Perks</h2>
-                    <p id="feature-multipliers-desc" class="text-zinc-300 text-sm md:text-base max-w-md mb-6 font-tech">Permanent coin multipliers,
-                        flying privileges, and quality-of-life commands to supercharge your prison progression.</p>
-                    <div class="flex flex-wrap gap-2 md:gap-4" id="feature-multipliers-tags">
-                        <span
-                            class="px-3 md:px-4 py-2 glass-panel rounded-lg text-[10px] md:text-xs font-bold text-white uppercase border-white/5 font-tech">X2
-                            - X6 Multipliers</span>
-                        <span
-                            class="px-3 md:px-4 py-2 glass-panel rounded-lg text-[10px] md:text-xs font-bold text-white uppercase border-white/5 font-tech">/fly
-                            Access</span>
-                        <span
-                            class="px-3 md:px-4 py-2 glass-panel rounded-lg text-[10px] md:text-xs font-bold text-white uppercase border-white/5 font-tech">Auto
-                            Sell</span>
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-stack-lg">
+            <div class="glass-panel p-6 rounded-3xl border-white/10 hover:border-brand-purple/40 transition-all flex flex-col justify-between animate-fade-up">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-brand-purple/20 flex items-center justify-center text-brand-purple mb-4">
+                        <span class="material-symbols-outlined text-2xl">storefront</span>
                     </div>
+                    <h3 class="text-xl font-bold text-white font-minecraft uppercase tracking-tight mb-2">Player Focused Economy</h3>
+                    <p class="text-xs text-zinc-300 font-tech leading-relaxed mb-4">Buy, sell, and trade items with other players to build your fortune and dominate the economy.</p>
                 </div>
+                <a href="/store" class="text-brand-pink font-bold text-xs uppercase font-tech flex items-center gap-1 hover:gap-2 transition-all">Explore Store <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl border-white/10 hover:border-brand-purple/40 transition-all flex flex-col justify-between animate-fade-up animate-fade-up-delay-1">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary mb-4">
+                        <span class="material-symbols-outlined text-2xl">pickaxe</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white font-minecraft uppercase tracking-tight mb-2">Mining</h3>
+                    <p class="text-xs text-zinc-300 font-tech leading-relaxed mb-4">Explore unique mines filled with rare blocks, valuable loot, and progression rewards.</p>
+                </div>
+                <a href="features.html" class="text-primary font-bold text-xs uppercase font-tech flex items-center gap-1 hover:gap-2 transition-all">Start Mining <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl border-white/10 hover:border-brand-purple/40 transition-all flex flex-col justify-between animate-fade-up animate-fade-up-delay-2">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-red-500/20 flex items-center justify-center text-red-400 mb-4">
+                        <span class="material-symbols-outlined text-2xl">swords</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white font-minecraft uppercase tracking-tight mb-2">PvP</h3>
+                    <p class="text-xs text-zinc-300 font-tech leading-relaxed mb-4">Fight other players in high-stakes combat, test your skills, and claim dominance.</p>
+                </div>
+                <a href="features.html" class="text-red-400 font-bold text-xs uppercase font-tech flex items-center gap-1 hover:gap-2 transition-all">Join Combat <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl border-white/10 hover:border-brand-purple/40 transition-all flex flex-col justify-between animate-fade-up animate-fade-up-delay-3">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-secondary/20 flex items-center justify-center text-secondary mb-4">
+                        <span class="material-symbols-outlined text-2xl">sports_esports</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white font-minecraft uppercase tracking-tight mb-2">Parkour and Mini-Games</h3>
+                    <p class="text-xs text-zinc-300 font-tech leading-relaxed mb-4">Take a break from mining and test your skills with parkour courses and fun minigames.</p>
+                </div>
+                <a href="features.html" class="text-secondary font-bold text-xs uppercase font-tech flex items-center gap-1 hover:gap-2 transition-all">Play Minigames <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SERVER INFORMATION & READ MORE SECTION     -->
+        <!-- ========================================== -->
+        <section class="glass-panel rounded-3xl p-6 md:p-8 border-white/10 mb-stack-lg animate-fade-up relative overflow-hidden">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-brand-purple/20 flex items-center justify-center text-brand-pink">
+                    <span class="material-symbols-outlined text-2xl">info</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-black text-white font-minecraft uppercase tracking-tight">Server Information</h2>
+            </div>
+
+            <!-- Short text (always visible) -->
+            <p class="text-zinc-300 font-tech text-base md:text-lg leading-relaxed mb-4">
+                Purple Prison is a Minecraft prison server featuring a player-driven economy, custom mining progression, intense PvP combat, and unique parkour and minigame challenges. Players can mine through ranks, trade with others, upgrade their gear, and compete in various server activities.
+            </p>
+
+            <!-- Expandable Long Text -->
+            <div id="read-more-content" class="hidden space-y-4 pt-2 border-t border-white/10 text-zinc-400 font-tech text-sm md:text-base leading-relaxed">
+                <p>
+                    Purple Prison is a long-standing Minecraft prison server that offers a classic yet continuously updated prison gameplay experience. Designed for players who enjoy progression, competition, and community interaction, Purple Prison combines traditional mining mechanics with modern features.
+                </p>
+                <p>
+                    Players start at the beginning rank and work their way up by mining resources, earning money, and completing objectives. The server features a thriving player-driven economy where users can trade items, set up shops, and build wealth through smart trading and resource management.
+                </p>
+                <p>
+                    Beyond mining, Purple Prison provides a variety of engaging activities. Combat enthusiasts can participate in high-stakes PvP battles, while players looking for alternate challenges can try parkour courses and minigames to earn extra rewards. With active community events, regular updates, and a dedicated player base, Purple Prison remains one of the premier destinations for Minecraft prison server fans.
+                </p>
+            </div>
+
+            <div class="mt-4 pt-2 flex justify-start">
+                <button id="toggle-read-more-btn" onclick="toggleReadMore()" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-xl font-bold font-tech text-xs md:text-sm uppercase tracking-widest transition-all flex items-center gap-2 border border-white/10">
+                    <span id="read-more-btn-text">Read More ↓</span>
+                </button>
             </div>
         </section>
 
@@ -629,8 +639,7 @@
                     <img loading="lazy" src="nav-logo.png"
                         class="h-8 md:h-10 object-contain grayscale relative z-10 transition-transform" alt="Logo" />
                 </div>
-                <p class="font-tech text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2026 Purple
-                    Prison. Not an official Minecraft product.</p>
+                <p class="font-tech text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">© 2026 Purple Prison. Not an official Minecraft product.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-6 md:gap-8">
                 <a class="text-zinc-500 hover:text-yellow-500 transition-colors font-tech text-[10px] md:text-xs uppercase tracking-widest"
@@ -687,7 +696,6 @@
                     <span class="font-tech text-[10px] font-bold tracking-widest uppercase">Vote</span>
                 </a>
             </li>
-            <!-- Forums link removed -->
             <li>
                 <a href="wiki.html"
                     class="flex flex-col items-center text-zinc-500 hover:text-white group transition-colors">
@@ -738,25 +746,11 @@
     </style>
 
     <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyDe1OZv0GyYndTmfUh9u8v-56Fvm55apbI",
-            authDomain: "databasetest1-9663a.firebaseapp.com",
-            databaseURL: "https://databasetest1-9663a-default-rtdb.firebaseio.com",
-            projectId: "databasetest1-9663a",
-            storageBucket: "databasetest1-9663a.firebasestorage.app",
-            messagingSenderId: "830337828005",
-            appId: "1:830337828005:web:aae4feec5824f09b7ab94c"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.database();
-
         // Default text (fallback)
         const defaults = {
-            heroLine1: 'BECOME THE',
-            heroLine2: 'ARCHON ',
-            heroDesc: 'Mine, rank up, and dominate ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ join a community that has thrived since 2014.',
+            heroLine1: 'BECOME THE ARCHON OF',
+            heroLine2: 'PURPLE PRISON',
+            heroDesc: 'Mine, rank up, and dominate – join a community that has thrived since 2014.',
             discordTitle: 'Join our Community',
             discordDesc: 'Connect with thousands of players on Discord.',
             joinTitle: 'Play Now',
@@ -767,90 +761,53 @@
                 pingTag: 'OPTIMIZED',
                 uptimeLabel: 'Server Uptime',
                 uptimeValue: '99.9%',
-                uptimeTag: 'STABLE',
-                donorLabel: 'Recent Donor',
-                donorName: 'Player_Zero',
-                donorTag: '[LEGEND]'
-            },
-            features: {
-                prison: {
-                    tag: 'Popular',
-                    title: 'Prison Ranks',
-                    desc: 'Mine your way up through Iron, Gold, and Diamond ranks. Unlock better mines, perks, and plot upgrades as you progress.'
-                },
-                plot: {
-                    tag: 'Exclusive',
-                    title: 'Plot Mines',
-                    desc: 'Upgrade your personal plot mines with Iron, Gold, Diamond, and exotic Clay blocks for the best block values on the server.'
-                },
-                multipliers: {
-                    title: 'Multipliers & Perks',
-                    desc: 'Permanent coin multipliers, flying privileges, and quality-of-life commands to supercharge your prison progression.',
-                    tags: ['X2 - X6 Multipliers', '/fly Access', 'Auto Sell']
-                }
+                uptimeTag: 'STABLE'
             }
         };
 
-        // Load content from Firebase and apply to DOM
+        // Load content and apply to DOM
         function loadContent() {
-            const contentRef = db.ref('siteContent');
-            contentRef.once('value').then((snapshot) => {
-                const data = snapshot.val() || {};
+            const h1 = document.getElementById('hero-line1');
+            if (h1) h1.textContent = defaults.heroLine1;
+            const h2 = document.getElementById('hero-line2');
+            if (h2) h2.textContent = defaults.heroLine2;
+            const desc = document.getElementById('hero-desc');
+            if (desc) desc.textContent = defaults.heroDesc;
+        }
 
-                // Hero
-                document.getElementById('hero-line1').textContent = data.heroLine1 || defaults.heroLine1;
-                document.getElementById('hero-line2').textContent = data.heroLine2 || defaults.heroLine2;
-                document.getElementById('hero-desc').textContent = data.heroDesc || defaults.heroDesc;
+        function toggleReadMore() {
+            const content = document.getElementById('read-more-content');
+            const btnText = document.getElementById('read-more-btn-text');
+            if (!content || !btnText) return;
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                btnText.textContent = 'Show Less ↑';
+            } else {
+                content.classList.add('hidden');
+                btnText.textContent = 'Read More ↓';
+            }
+        }
 
-                // Discord banner
-                document.getElementById('discord-title').textContent = data.discordTitle || defaults.discordTitle;
-                document.getElementById('discord-desc').textContent = data.discordDesc || defaults.discordDesc;
-
-                // Join banner
-                document.getElementById('join-title').textContent = data.joinTitle || defaults.joinTitle;
-                document.getElementById('join-ip').textContent = data.joinIP || defaults.joinIP;
-
-                // Stats
-                const stats = data.stats || defaults.stats;
-                document.getElementById('stat-ping-label').textContent = stats.pingLabel || defaults.stats.pingLabel;
-                document.getElementById('stat-ping-value').textContent = stats.pingValue || defaults.stats.pingValue;
-                document.getElementById('stat-ping-tag').textContent = stats.pingTag || defaults.stats.pingTag;
-                document.getElementById('stat-uptime-label').textContent = stats.uptimeLabel || defaults.stats.uptimeLabel;
-                document.getElementById('stat-uptime-value').textContent = stats.uptimeValue || defaults.stats.uptimeValue;
-                document.getElementById('stat-uptime-tag').textContent = stats.uptimeTag || defaults.stats.uptimeTag;
-                document.getElementById('stat-donor-label').textContent = stats.donorLabel || defaults.stats.donorLabel;
-                document.getElementById('stat-donor-name').textContent = stats.donorName || defaults.stats.donorName;
-                document.getElementById('stat-donor-tag').textContent = stats.donorTag || defaults.stats.donorTag;
-
-                // Features
-                const features = data.features || defaults.features;
-                const prison = features.prison || defaults.features.prison;
-                document.getElementById('feature-prison-tag').textContent = prison.tag || defaults.features.prison.tag;
-                document.getElementById('feature-prison-title').textContent = prison.title || defaults.features.prison.title;
-                document.getElementById('feature-prison-desc').textContent = prison.desc || defaults.features.prison.desc;
-
-                const plot = features.plot || defaults.features.plot;
-                document.getElementById('feature-plot-tag').textContent = plot.tag || defaults.features.plot.tag;
-                document.getElementById('feature-plot-title').textContent = plot.title || defaults.features.plot.title;
-                document.getElementById('feature-plot-desc').textContent = plot.desc || defaults.features.plot.desc;
-
-                const mult = features.multipliers || defaults.features.multipliers;
-                document.getElementById('feature-multipliers-title').textContent = mult.title || defaults.features.multipliers.title;
-                document.getElementById('feature-multipliers-desc').textContent = mult.desc || defaults.features.multipliers.desc;
-                const tagsContainer = document.getElementById('feature-multipliers-tags');
-                const tags = mult.tags || defaults.features.multipliers.tags;
-                tagsContainer.innerHTML = '';
-                tags.forEach(tag => {
-                    const span = document.createElement('span');
-                    span.className = 'px-3 md:px-4 py-2 glass-panel rounded-lg text-[10px] md:text-xs font-bold text-white uppercase border-white/5 font-tech';
-                    span.textContent = tag;
-                    tagsContainer.appendChild(span);
-                });
-
-            }).catch((error) => {
-                console.error('Error loading content from Firebase:', error);
-                // Fallback to defaults (already in DOM)
+        function checkUserAuth() {
+            const username = localStorage.getItem('mcUsername') || localStorage.getItem('username');
+            const authContainers = document.querySelectorAll('.header-auth-container');
+            authContainers.forEach(container => {
+                if (username) {
+                    container.innerHTML = `
+                        <div class="flex items-center gap-2.5 bg-zinc-900/90 border border-purple-500/30 px-3.5 py-1.5 rounded-xl shadow-lg">
+                            <img src="https://mc-heads.net/avatar/${username}/32" alt="${username}" class="w-7 h-7 rounded-lg border border-purple-400/50 shadow-sm" />
+                            <span class="text-xs font-bold text-white font-tech uppercase tracking-wider">${username}</span>
+                            <button onclick="logoutUser()" class="ml-2 text-[11px] text-red-400 hover:text-red-300 font-tech font-bold uppercase tracking-wider transition-colors">Logout</button>
+                        </div>
+                    `;
+                }
             });
+        }
+
+        function logoutUser() {
+            localStorage.removeItem('mcUsername');
+            localStorage.removeItem('username');
+            window.location.reload();
         }
 
         // Copy to clipboard
@@ -887,10 +844,12 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json();
                 const online = data.players?.online ?? '--';
-                document.getElementById('online-count').textContent = online;
+                const countEl = document.getElementById('online-count');
+                if (countEl) countEl.textContent = online;
             } catch (error) {
                 console.error('Failed to fetch online players:', error);
-                document.getElementById('online-count').textContent = '--';
+                const countEl = document.getElementById('online-count');
+                if (countEl) countEl.textContent = '--';
             }
         }
 
@@ -912,6 +871,7 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             loadContent();
+            checkUserAuth();
             fetchOnlinePlayers();
             setInterval(fetchOnlinePlayers, 60000);
             observeAnimations();
