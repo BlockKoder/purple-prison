@@ -1,0 +1,88 @@
+// You can override the default settings using the SCSS with on the @forward rule for "./settings".
+// More information can be found here https://sass-lang.com/documentation/at-rules/use/#configuration
+
+//  Example of overriding the default settings:
+//
+
+// @forward "./settings" with (
+//   // Base settings
+//   $pure-black: #000000,
+//   $pure-white: #ffffff,
+
+//   // Background
+//   $background-100: #ffffff,
+//   $background-200: #f2f2f2,
+
+//   // Colour pallette
+//   $c-100: #e5e5e5,
+//   $c-200: #d1cfc6,
+//   $c-300: #cccccc,
+//   $c-400: #b2b2b2,
+//   $c-500: #7f7f7f,
+//   $c-600: #666666,
+//   $c-700: #4d4d4d,
+//   $c-800: #333333,
+//   $c-900: #1a1a1a,
+
+//   $primary: #D81B60,
+
+//   $text-high-emphasis-color: #000000,
+//   $text-base-color: #000000,
+
+//   // Components
+//   $modal-close-color: #000000,
+//   $loader-color: rgba(0, 0, 0, 0.6),
+// );
+
+@forward "./settings" with (
+	$background-100: #131314,
+	$background-200: #1c1b1c,
+	$c-100: #201f20,
+	$c-200: #353436,
+	$c-300: #4d4635,
+	$c-400: #3d4a61,
+	$c-500: #5f6f89,
+	$c-600: #8793a8,
+	$c-700: #a3aebf,
+	$c-800: #cdd5e2,
+	$c-900: #e5e2e3,
+	$primary: #f2ca50,
+	$secondary: #7c3aed,
+	$success: #d4af37,
+	$danger: #d44f4f,
+	$border-radius-base: 14px,
+	$font-family: "Rajdhani",
+	$heading-font-family: "Orbitron",
+	$text-base-color: #e5e2e3,
+	$text-high-emphasis-color: #ffffff,
+	$text-medium-emphasis-color: #b9b4b6,
+	$links: #ffffff,
+	$body-bg-color: #131314,
+	$input-bg: #201f20,
+	$input-border-color: #4d4635,
+	$input-border-color-hover: #f2ca50,
+	$input-placeholder-color: #99907c,
+	$btn-border-radius: 12px,
+	$btn-height-base: 46px,
+	$btn-height-lg: 58px,
+	$hero-banner-height: 420px,
+	$hero-gradient: linear-gradient(180deg, rgba(19, 19, 20, 0.16), rgba(19, 19, 20, 0.94)),
+	$hero-background-opacity: 0.78,
+	$header-bg: transparent,
+	$header-sticky-bg: rgba(19, 19, 20, 0.94),
+	$header-card-bg: #201f20,
+	$header-card-border-radius: 12px,
+	$package-card-bg: rgba(32, 31, 32, 0.82),
+	$package-card-image-bg: linear-gradient(180deg, #353436 0%, #201f20 100%),
+	$package-card-border-radius: 16px,
+	$package-card-box-shadow: 0 14px 30px rgba(0, 0, 0, 0.34),
+	$package-card-price-color: #f2ca50,
+	$category-card-bg: #201f20,
+	$category-card-border-radius: 16px,
+	$category-card-border: 1px solid rgba(134, 153, 184, 0.35),
+	$modal-bg: #201f20,
+	$modal-border-radius: 14px,
+	$footer-bg: #1c1b1c,
+	$footer-tebex-bg: #131314,
+	$sidebar-bg: #1c1b1c
+);
