@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         public: {
             apiPublicKey:
                 process.env.NUXT_PUBLIC_API_PUBLIC_KEY ||
-                "yy7-6e7fe0ee11b433a4a3eb5d8f619848a4d235f2e4",
+                "143zr-c397b5b6b25a9b6ba79cb4a1d0b4cbe42cb5a3e4",
             apiBaseUrl: "https://headless.tebex.io",
         },
     },
