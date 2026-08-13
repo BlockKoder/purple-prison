@@ -48,11 +48,11 @@ definePageMeta({
 });
 
 const router = useRouter();
-const route = useRoute();
 const { open } = useModalPage();
 
 const { t } = useI18n();
 const basketStore = useBasketStore();
+const route = useRoute();
 const id = computed(() => route.params.id as string);
 const targetUsernameId = computed(() => route.query.targetUsernameId as string);
 

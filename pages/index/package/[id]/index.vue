@@ -20,9 +20,9 @@ definePageMeta({
 });
 
 const router = useRouter();
-const route = useRoute();
 const { open } = useModalPage();
 
+const route = useRoute();
 const id = computed(() => route.params.id as string);
 const { t } = useI18n();
 

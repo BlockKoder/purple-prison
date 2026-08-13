@@ -45,14 +45,6 @@ const pageDocument = computed(() => {
 
     return document
         .replace("<head>", '<head><base href="/">')
-        .replaceAll(
-            "https://headless-template.pages.dev",
-            "https://purpleprison.pages.dev/",
-        )
-        .replaceAll(
-            "https://tebex-headless-template.pages.dev",
-            "https://purpleprison.pages.dev/",
-        )
         .replaceAll('href="index.html"', 'href="/"')
         .replaceAll('href="store.html"', 'href="/store"')
         .replaceAll('href="features.html"', 'href="/features"')
