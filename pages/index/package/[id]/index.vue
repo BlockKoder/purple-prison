@@ -1,5 +1,5 @@
 <template>
-    <Modal v-model="open" width="700px" @hidden="handleClose">
+    <Modal v-model="open" width="700px" @hidden="router.push('/')">
         <PackageCard
             v-if="pkg && !pending"
             :pkg="pkg"
@@ -25,14 +25,6 @@ const { open } = useModalPage();
 
 const id = computed(() => route.params.id as string);
 const { t } = useI18n();
-
-const handleClose = () => {
-    if (window.history.length > 1) {
-        router.back();
-    } else {
-        router.push("/store");
-    }
-};
 
 const { data: pkg, error, pending } = useAsyncData(() => getPackage(id.value));
 

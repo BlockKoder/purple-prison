@@ -1,5 +1,5 @@
 <template>
-    <Modal v-model="open" @hidden="handleClose">
+    <Modal v-model="open" @hidden="router.push('/')">
         <div v-if="pkg">
             <h5>{{ pkg.name }}</h5>
 
@@ -42,15 +42,6 @@ const id = computed(() => route.params.id as string);
 
 const basketStore = useBasketStore();
 const authStore = useAuthStore();
-const uiStore = useUIStore();
-
-const handleClose = () => {
-    if (window.history.length > 1) {
-        router.back();
-    } else {
-        router.push("/store");
-    }
-};
 
 const { data: pkg, error } = useAsyncData(() => getPackage(id.value));
 
@@ -60,11 +51,7 @@ if (error.value) {
 
 // Ensure the user is logged in and has a basket first!
 if (!authStore.isAuthenticated) {
-    basketStore.addPendingAction({
-        type: "gift",
-        packageId: Number(id.value),
-    });
-    uiStore.toggleItem("username-modal", true);
+    await router.push(authStore.getLoginRoute(`/package/${id.value}/gift`));
 }
 
 const targetUsernameId = ref("");

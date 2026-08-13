@@ -102,7 +102,6 @@ export const useBasketStore = defineStore("basket", () => {
     const toastStore = useToastStore();
     const authStore = useAuthStore();
     const webStoreStore = useWebstoreStore();
-    const uiStore = useUIStore();
 
     const router = useRouter();
     const { t } = useI18n();
@@ -238,7 +237,7 @@ export const useBasketStore = defineStore("basket", () => {
                 quantity,
             });
 
-            uiStore.toggleItem("username-modal", true);
+            await router.push(authStore.getLoginRoute());
             return;
         }
 
@@ -415,7 +414,7 @@ export const useBasketStore = defineStore("basket", () => {
                 targetUsername,
             });
 
-            uiStore.toggleItem("username-modal", true);
+            await router.push(authStore.getLoginRoute());
             return;
         }
 

@@ -7,8 +7,6 @@
 
         <CartSidebar />
 
-        <UsernameModal />
-
         <div class="w-100 container--fluid">
             <slot />
         </div>
