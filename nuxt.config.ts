@@ -3,7 +3,7 @@ export default defineNuxtConfig({
         configSchema: true,
         appManifest: false,
     },
-    devtools: { enabled: true },
+    devtools: { enabled: false },
     modules: [
         "@nuxtjs/google-fonts",
         "nuxt-svgo",
