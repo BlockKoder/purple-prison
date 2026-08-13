@@ -13,15 +13,29 @@
                     <a href="/wiki.html">Wiki</a>
                 </div>
                 <div class="store-header__actions">
-                    <NuxtLink
-                        class="store-header__login"
-                        :to="authStore.loginRoute"
-                        >{{
-                            authStore.isAuthenticated
-                                ? authStore.user.username
-                                : $t("buttons.login")
-                        }}</NuxtLink
+                    <button
+                        v-if="!authStore.isAuthenticated"
+                        type="button"
+                        class="store-header__login-btn"
+                        @click="uiStore.toggleItem('username-modal', true)"
                     >
+                        {{ $t("buttons.login") }}
+                    </button>
+                    <div
+                        v-else
+                        class="store-header__user"
+                        @click="uiStore.toggleItem('username-modal', true)"
+                        title="Click to change username"
+                    >
+                        <img
+                            :src="`https://mc-heads.net/avatar/${authStore.user?.username || 'Steve'}/22`"
+                            alt="Minecraft Head"
+                            class="store-header__user-avatar"
+                        />
+                        <span class="store-header__user-name">{{
+                            authStore.user?.username
+                        }}</span>
+                    </div>
                     <button
                         class="store-header__cart"
                         @click="uiStore.toggleItem('cart-sidebar')"
@@ -85,9 +99,12 @@ const appConfig = useAppConfig();
     gap: 24px;
 }
 .store-header__links a,
-.store-header__login {
+.store-header__login,
+.store-header__login-btn {
     position: relative;
     color: #bbb6b8;
+    background: transparent;
+    border: none;
     font-family: Rajdhani, sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -95,11 +112,43 @@ const appConfig = useAppConfig();
     text-decoration: none;
     text-transform: uppercase;
     transition: color 0.2s;
+    cursor: pointer;
+    padding: 0;
 }
 .store-header__links a:hover,
 .store-header__links .active,
-.store-header__login:hover {
+.store-header__login:hover,
+.store-header__login-btn:hover {
     color: #fff;
+}
+.store-header__user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border: 1px solid rgba(242, 202, 80, 0.3);
+    border-radius: 8px;
+    background: rgba(242, 202, 80, 0.08);
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(242, 202, 80, 0.18);
+        border-color: #f2ca50;
+    }
+}
+.store-header__user-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    image-rendering: pixelated;
+}
+.store-header__user-name {
+    color: #f2ca50;
+    font-family: Rajdhani, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
 }
 .store-header__links .active::after {
     content: "";

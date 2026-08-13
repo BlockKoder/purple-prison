@@ -1,10 +1,7 @@
 <template>
     <div :class="classes" :style="style">
         <div class="package-card__inner">
-            <div
-                class="package-card__image"
-                @click="$router.push(`/package/${pkg.id}`)"
-            >
+            <div class="package-card__image" @click="openPackageModal">
                 <NuxtImg
                     v-if="pkg.image"
                     :src="pkg.image"
@@ -14,10 +11,7 @@
                 />
             </div>
 
-            <div
-                class="package-card__details"
-                @click="$router.push(`/package/${pkg.id}`)"
-            >
+            <div class="package-card__details" @click="openPackageModal">
                 <div class="package-card__meta">
                     <h5>{{ pkg.name }}</h5>
                     <h6>
@@ -75,7 +69,15 @@ const slots = defineSlots();
 const emit = defineEmits(["addToCart"]);
 
 const basketStore = useBasketStore();
+const authStore = useAuthStore();
+const uiStore = useUIStore();
 const router = useRouter();
+
+const openPackageModal = () => {
+    const currentPath = router.currentRoute.value.path;
+    const basePath = currentPath.startsWith("/store") ? "/store" : "";
+    router.push(`${basePath}/package/${props.pkg.id}`);
+};
 
 const classes = computed(() => ({
     "package-card": true,
@@ -133,7 +135,17 @@ const action = async (key: "gift" | "addToCart", value?: number) => {
 
         emit("addToCart", quantity);
     } else if (key === "gift" && !props.pkg.disable_gifting) {
-        await router.push(`/package/${props.pkg.id}/gift`);
+        if (!authStore.isAuthenticated) {
+            basketStore.addPendingAction({
+                type: "gift",
+                packageId: props.pkg.id,
+            });
+            uiStore.toggleItem("username-modal", true);
+        } else {
+            const currentPath = router.currentRoute.value.path;
+            const basePath = currentPath.startsWith("/store") ? "/store" : "";
+            await router.push(`${basePath}/package/${props.pkg.id}/gift`);
+        }
     }
 
     setLoading(key, false);

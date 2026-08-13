@@ -102,6 +102,7 @@ export const useBasketStore = defineStore("basket", () => {
     const toastStore = useToastStore();
     const authStore = useAuthStore();
     const webStoreStore = useWebstoreStore();
+    const uiStore = useUIStore();
 
     const router = useRouter();
     const { t } = useI18n();
@@ -237,7 +238,7 @@ export const useBasketStore = defineStore("basket", () => {
                 quantity,
             });
 
-            await router.push(authStore.getLoginRoute());
+            uiStore.toggleItem("username-modal", true);
             return;
         }
 
@@ -414,7 +415,7 @@ export const useBasketStore = defineStore("basket", () => {
                 targetUsername,
             });
 
-            await router.push(authStore.getLoginRoute());
+            uiStore.toggleItem("username-modal", true);
             return;
         }
 
@@ -438,9 +439,10 @@ export const useBasketStore = defineStore("basket", () => {
 
         let updatedBasket: Basket;
         const cleanedVariables = sanitizeVariableData(variables);
+        const pkgData = await services.getPackage(packageId.toString());
 
         const packageType =
-            pkg.type === "subscription" ? "subscription" : "single";
+            pkgData.type === "subscription" ? "subscription" : "single";
 
         try {
             packagesLoading.add(packageId);

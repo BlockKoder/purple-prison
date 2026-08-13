@@ -1,5 +1,5 @@
 <template>
-    <Modal v-model="open" @hidden="router.push('/')">
+    <Modal v-model="open" @hidden="handleClose">
         <div v-if="pkg">
             <h5>{{ pkg.name }}</h5>
 
@@ -48,11 +48,19 @@ definePageMeta({
 });
 
 const router = useRouter();
+const route = useRoute();
 const { open } = useModalPage();
+
+const handleClose = () => {
+    if (window.history.length > 1) {
+        router.back();
+    } else {
+        router.push("/store");
+    }
+};
 
 const { t } = useI18n();
 const basketStore = useBasketStore();
-const route = useRoute();
 const id = computed(() => route.params.id as string);
 const targetUsernameId = computed(() => route.query.targetUsernameId as string);
 
