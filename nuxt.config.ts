@@ -21,11 +21,15 @@ export default defineNuxtConfig({
     // Runtime config is overridden by .env variables
     runtimeConfig: {
         // NOTE: This should never be moved to public or app config as it is private
-        apiPrivateKey: "",
+        apiPrivateKey:
+            process.env.NUXT_API_PRIVATE_KEY ||
+            "PbONU0ddgJA9Img7i6yp1vXzWJrZPUv8",
 
         // Config that will be exposed to the client
         public: {
-            apiPublicKey: "yy7-6e7fe0ee11b433a4a3eb5d8f619848a4d235f2e4",
+            apiPublicKey:
+                process.env.NUXT_PUBLIC_API_PUBLIC_KEY ||
+                "143zr-c397b5b6b25a9b6ba79cb4a1d0b4cbe42cb5a3e4",
             apiBaseUrl: "https://headless.tebex.io",
         },
     },
