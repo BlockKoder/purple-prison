@@ -4,7 +4,7 @@ An integration of the Tebex Headless API built upon Nuxt, Vue 3 & Typescript for
 
 ## Demo
 
-You can view a live demo of this repo by visiting https://tebex-headless-template.pages.dev.
+You can view a live demo of this repo by visiting https://purpleprison.pages.dev/.
 
 ## ⚡ Setup
 Make sure to install the dependencies:

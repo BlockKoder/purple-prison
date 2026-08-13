@@ -13,6 +13,14 @@ import rawHomeDocument from "~/assets/purpleprison-home.html?raw";
 
 const homeDocument = rawHomeDocument
     .replace("<head>", '<head><base href="/">')
+    .replaceAll(
+        "https://headless-template.pages.dev",
+        "https://purpleprison.pages.dev/",
+    )
+    .replaceAll(
+        "https://tebex-headless-template.pages.dev",
+        "https://purpleprison.pages.dev/",
+    )
     .replaceAll('href="/purpleprison-home/"', 'href="/"')
     .replaceAll('href="login.html"', 'href="/login"')
     .replaceAll('href="register.html"', 'href="/register"')
